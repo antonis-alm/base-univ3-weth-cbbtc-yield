@@ -7,4 +7,4 @@ dependencies = [
 ]
 
 [tool.almanak.run]
-interval = 1800
+interval = 600
