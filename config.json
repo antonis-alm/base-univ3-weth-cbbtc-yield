@@ -1,0 +1,76 @@
+{
+  "chain": "base",
+  "protocol": "uniswap_v3",
+  "pool": "WETH/CBBTC/3000",
+  "base_token": "WETH",
+  "quote_token": "CBBTC",
+  "entry": {
+    "enabled": true,
+    "min_idle_usd_to_deploy": 12,
+    "max_spread_bps": 40,
+    "max_gas_usd": 8
+  },
+  "sizing": {
+    "max_capital_deployed_pct": "85",
+    "target_per_rebalance_pct": 25,
+    "min_deploy_ticket_usd": 6
+  },
+  "risk": {
+    "max_one_day_realized_volatility_pct": 7,
+    "max_allowed_price_deviation_from_mid_bps": 180,
+    "stop_loss_on_position_pct": 10,
+    "max_drawdown_pct": "22",
+    "min_health_buffer_pct": 30
+  },
+  "il_hedging": {
+    "enabled": true,
+    "trigger_price_move_pct": 4,
+    "hedge_ratio_pct": "0",
+    "max_hedge_notional_pct": 40
+  },
+  "rebalancing": {
+    "check_interval_minutes": 30,
+    "rebalance_on_out_of_range": true,
+    "range_width_pct": "5",
+    "cooldown_minutes": 120,
+    "max_rebalances_per_day": 6
+  },
+  "fees": {
+    "min_fee_claim_usd": 0.5,
+    "reinvest_fees": true
+  },
+  "exit": {
+    "take_profit_pct": 18,
+    "time_stop_days": "30",
+    "exit_on_apy_drop_below_pct": 12,
+    "exit_on_tvl_drop_below_usd": 5000000,
+    "teardown_policy": "RISK_OR_TIME"
+  },
+  "safety": {
+    "slippage_bps": 70,
+    "emergency_exit_on_liquidity_shock": true
+  },
+  "force_action": "",
+  "force_position_id": null,
+  "force_swap_direction": "weth_to_cbbtc",
+  "force_swap_amount_usd": 2,
+  "token_funding": [
+    {
+      "symbol": "WETH",
+      "address": "0x4200000000000000000000000000000000000006",
+      "amount": "8",
+      "amount_type": "usd"
+    },
+    {
+      "symbol": "CBBTC",
+      "address": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+      "amount": "8",
+      "amount_type": "usd"
+    }
+  ],
+  "anvil_funding": {
+    "ETH": 10,
+    "WETH": 8,
+    "CBBTC": 0.25
+  }
+}
